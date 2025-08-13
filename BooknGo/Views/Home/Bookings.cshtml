@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Bookings";
+}
+@model List<BooknGo.Models.Booking>
+
+<div class="container py-5">
+    <h1>@ViewData["Title"]</h1>
+    
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+        @foreach (var booking in Model)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-lg border-3 border border-black border-2 p-3 rounded-6">
+                    <div class="card-header text-center bg-white border-0">
+                        <h5 class="fw-bolder">@booking.Name</h5>
+                    </div>
+
+                    <div class="card-body text-center">
+                        <p class="text-muted mb-2">@booking.Description</p>
+                        <p class="mb-1"><strong>Start:</strong> @booking.StartDate.ToString("yyyy-MM-dd HH:mm")</p>
+                        <p class="mb-1"><strong>End:</strong> @booking.EndDate.ToString("yyyy-MM-dd HH:mm")</p>
+                        <p class="mb-1"><strong>Location:</strong> @booking.Location</p>
+                        <p class="mb-3"><strong>Capacity:</strong> @booking.Capacity</p>
+                    </div>
+
+                    <div class="card-footer bg-white border-0">
+                        <div class="d-grid gap-2">
+                            <a asp-action="CreateBooking" asp-controller="Home" asp-route-id="@booking.EventId" class="btn btn-warning fw-semibold rounded-pill shadow-sm">
+                                Edit Booking
+                            </a>
+                            <a asp-action="DeleteBooking" asp-controller="Home" asp-route-id="@booking.EventId" class="btn btn-danger fw-semibold rounded-pill shadow-sm">
+                                Delete Booking
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

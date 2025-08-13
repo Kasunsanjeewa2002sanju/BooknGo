@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36221.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooknGo", "BooknGo\BooknGo.csproj", "{D312A20E-254D-431A-8DC0-A215BA5A9DCC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D312A20E-254D-431A-8DC0-A215BA5A9DCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D312A20E-254D-431A-8DC0-A215BA5A9DCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D312A20E-254D-431A-8DC0-A215BA5A9DCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D312A20E-254D-431A-8DC0-A215BA5A9DCC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {90A7948C-BB2D-4431-B6BD-1D258C6DEA9D}
+	EndGlobalSection
+EndGlobal
