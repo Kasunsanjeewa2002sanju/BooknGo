@@ -1,6 +1,7 @@
 using BooknGo.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using System.Data;
 using System.Diagnostics;
 
 namespace BooknGo.Controllers
@@ -25,7 +26,19 @@ namespace BooknGo.Controllers
 
         public IActionResult Bookings()
         {
-            var allBookings = _context.Bookings.ToList(); // Works now
+            var allBookings = _context.Bookings
+                .Select(b => new Booking
+                {
+                    EventId = b.EventId,
+                    Name = b.Name ?? string.Empty,
+                    Description = b.Description ?? string.Empty,
+                    StartDate = b.StartDate,
+                    EndDate = b.EndDate,
+                    Location = b.Location ?? string.Empty,
+                    Capacity = b.Capacity,
+                    Category = b.Category ?? string.Empty
+                }).ToList();
+
             return View(allBookings);
         }
 
@@ -41,65 +54,102 @@ namespace BooknGo.Controllers
         }
 
         [HttpGet]
-        public IActionResult CreateEditBooking()
-        {
-            return View();
-        }
-
+        
         [HttpPost]
         public IActionResult CreateEditBookingForm(Booking model)
         {
             if (!ModelState.IsValid)
             {
-                return View(model);
+                return View("CreateEditBooking", model);
             }
 
-            string connectionString = _configuration.GetConnectionString("DefaultConnection");
+            string? connectionString = _configuration.GetConnectionString("DefaultConnection");
 
-            // Optional: check DB connection
-            using (var con = new SqlConnection(connectionString))
+            if (string.IsNullOrEmpty(connectionString))
             {
-                con.Open();
-                var cmd = new SqlCommand("SELECT DB_NAME()", con);
-                string currentDb = (string)cmd.ExecuteScalar();
-                Console.WriteLine("Connected to database: " + currentDb);
+                ModelState.AddModelError("", "Database connection string is not configured.");
+                return View("CreateEditBooking", model);
             }
 
-            // Insert booking
-            using (SqlConnection con = new SqlConnection(connectionString))
+            try
             {
-                string query = @"
-                    INSERT INTO Booking (EventId, Name, Description, StartDate, EndDate, Location, Capacity)
-                    VALUES (@EventId, @Name, @Description, @StartDate, @EndDate, @Location, @Capacity)";
-
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                // Check DB connection
+                using (var con = new SqlConnection(connectionString))
                 {
-                    cmd.Parameters.AddWithValue("@EventId", model.EventId);
-                    cmd.Parameters.AddWithValue("@Name", model.Name);
-                    cmd.Parameters.AddWithValue("@Description", model.Description);
-                    cmd.Parameters.AddWithValue("@StartDate", model.StartDate);
-                    cmd.Parameters.AddWithValue("@EndDate", model.EndDate);
-                    cmd.Parameters.AddWithValue("@Location", model.Location);
-                    cmd.Parameters.AddWithValue("@Capacity", model.Capacity);
-
                     con.Open();
-                    cmd.ExecuteNonQuery();
+                    var cmd = new SqlCommand("SELECT DB_NAME()", con);
+                    string currentDb = (string)cmd.ExecuteScalar();
+                    Console.WriteLine("Connected to database: " + currentDb);
                 }
+
+                if (model.EventId > 0)
+                {
+                    // Update booking
+                    using (SqlConnection con = new SqlConnection(connectionString))
+                    {
+                        string updateQuery = @"
+                    UPDATE Booking
+                    SET Name = @Name,
+                        Description = @Description,
+                        StartDate = @StartDate,
+                        EndDate = @EndDate,
+                        Location = @Location,
+                        Capacity = @Capacity,
+                        Category = @Category
+                    WHERE EventId = @EventId";
+
+                        using (SqlCommand cmd = new SqlCommand(updateQuery, con))
+                        {
+                            cmd.Parameters.Add("@EventId", SqlDbType.Int).Value = model.EventId;
+                            cmd.Parameters.Add("@Name", SqlDbType.NVarChar, 200).Value = model.Name ?? (object)DBNull.Value;
+                            cmd.Parameters.Add("@Description", SqlDbType.NVarChar, -1).Value = model.Description ?? (object)DBNull.Value;
+                            cmd.Parameters.Add("@StartDate", SqlDbType.DateTime).Value = model.StartDate;
+                            cmd.Parameters.Add("@EndDate", SqlDbType.DateTime).Value = model.EndDate;
+                            cmd.Parameters.Add("@Location", SqlDbType.NVarChar, 200).Value = model.Location ?? (object)DBNull.Value;
+                            cmd.Parameters.Add("@Capacity", SqlDbType.Int).Value = model.Capacity;
+                            cmd.Parameters.Add("@Category", SqlDbType.NVarChar, 100).Value = model.Category ?? (object)DBNull.Value;
+
+                            con.Open();
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+
+                    TempData["Success"] = "Booking updated successfully!";
+                }
+                else
+                {
+                    // Insert booking
+                    using (SqlConnection con = new SqlConnection(connectionString))
+                    {
+                        string insertQuery = @"
+                    INSERT INTO Booking (Name, Description, StartDate, EndDate, Location, Capacity, Category)
+                    VALUES (@Name, @Description, @StartDate, @EndDate, @Location, @Capacity, @Category)";
+
+                        using (SqlCommand cmd = new SqlCommand(insertQuery, con))
+                        {
+                            cmd.Parameters.Add("@Name", SqlDbType.NVarChar, 200).Value = model.Name ?? (object)DBNull.Value;
+                            cmd.Parameters.Add("@Description", SqlDbType.NVarChar, -1).Value = model.Description ?? (object)DBNull.Value;
+                            cmd.Parameters.Add("@StartDate", SqlDbType.DateTime).Value = model.StartDate;
+                            cmd.Parameters.Add("@EndDate", SqlDbType.DateTime).Value = model.EndDate;
+                            cmd.Parameters.Add("@Location", SqlDbType.NVarChar, 200).Value = model.Location ?? (object)DBNull.Value;
+                            cmd.Parameters.Add("@Capacity", SqlDbType.Int).Value = model.Capacity;
+                            cmd.Parameters.Add("@Category", SqlDbType.NVarChar, 100).Value = model.Category ?? (object)DBNull.Value;
+
+                            con.Open();
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+
+                    TempData["Success"] = "Booking created successfully!";
+                }
+
+                return RedirectToAction("Bookings");
+            }   
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", "Error: " + ex.Message);
+                return View("CreateEditBooking", model);
             }
-
-            TempData["Success"] = "Booking created successfully!";
-            return RedirectToAction("Bookings");
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
