@@ -1,191 +1,506 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "BooknGo";
 }
+@model List<BooknGo.Models.Booking>
 
-<!-- Main Hero Section -->
-<div class="bg-dark text-white text-center py-5" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80'); background-size: cover; background-position: center;">
-    <div class="container">
-        <h1 class="display-4 fw-bold">Discover & Book Your Perfect Entertainment Event</h1>
-        <p class="lead mb-4">From live concerts to film festivals, find the best events near you.</p>
-        <a class="btn btn-success btn-lg me-3" asp-controller="Home" asp-action="Bookings">Explore Events</a>
-        <a class="btn btn-outline-light btn-lg" asp-controller="Home" asp-action="CreateEditBookingForm">Book Now</a>
-    </div>
-</div>
+<a asp-action="CreateEditBookingForm" asp-controller="Home" class="btn btn-primary fw-semibold rounded-pill shadow-sm" style="background-color: #1E90FF; border-color: #1E90FF;">
+    Add Booking
+</a>
 
-<!-- Music & Performance Events -->
-<section class="py-5 bg-light">
+
+<!-- Explore & Discover Section -->
+<section id="explore" class="py-5" style="background-color: #f8f9fa;">
     <div class="container">
-        <h2 class="mb-4 text-success">🎵 Music & Performance Events</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80" alt="Live Concert" class="img-fluid rounded shadow-sm" />
-                <h5 class="mt-3">Live Concerts</h5>
-                <p>Experience electrifying performances by local and international artists.</p>
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <p class="text-success fw-bold mb-2">EXPLORE NATURE</p>
+                <h2 class="display-5 fw-bold mb-4">Explore & Discover the Touch of Nature</h2>
+                <p class="lead mb-3">Immerse yourself in the breathtaking beauty of our natural surroundings. From dense forests to pristine lakes, every corner of our campground offers a unique connection with nature.</p>
+                <p class="mb-4">Our carefully maintained trails and observation points allow you to experience wildlife in their natural habitat while maintaining the highest standards of environmental conservation.</p>
+                <a class="btn btn-success btn-lg px-4" href="#activities">Explore Now</a>
             </div>
-            <div class="col-md-4">
-                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="Music Festival" class="img-fluid rounded shadow-sm" />
-                <h5 class="mt-3">Music Festivals</h5>
-                <p>Join vibrant festivals celebrating music, culture, and community.</p>
-            </div>
-            <div class="col-md-4">
-                <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=600&q=80" alt="DJ Night" class="img-fluid rounded shadow-sm" />
-                <h5 class="mt-3">DJ Nights & Club Parties</h5>
-                <p>Dance the night away with top DJs and electrifying party atmospheres.</p>
+            <div class="col-lg-6">
+                <div class="position-relative" style="background-color: #1a4d2e; padding: 20px; border-radius: 15px;">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=400&q=80" alt="Hiking" class="img-fluid rounded" />
+                        </div>
+                        <div class="col-6">
+                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=400&q=80" alt="Dog in field" class="img-fluid rounded mb-3" />
+                            <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=400&q=80" alt="Hiking poles" class="img-fluid rounded" />
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Arts & Cultural Shows -->
-<section class="py-5 bg-white">
+<!-- Find Your Special Section -->
+<section class="py-5">
     <div class="container">
-        <h2 class="mb-4 text-success">🎭 Arts & Cultural Shows</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=600&q=80" alt="Theatre Play" class="img-fluid rounded shadow-sm" />
-                <h5 class="mt-3">Theatre Plays & Drama</h5>
-                <p>Enjoy captivating theatrical performances and dramatic storytelling.</p>
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="position-relative" style="background-color: #1a4d2e; padding: 20px; border-radius: 15px;">
+                    <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=600&q=80" alt="Woman with guitar" class="img-fluid rounded mb-3" />
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=300&q=80" alt="Mountain hiking" class="img-fluid rounded" />
+                        </div>
+                        <div class="col-6">
+                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=300&q=80" alt="River rafting" class="img-fluid rounded" />
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4">
-                <img src="https://images.unsplash.com/photo-1531058020387-c322a3ef7a1d?auto=format&fit=crop&w=600&q=80" alt="Stand-Up Comedy" class="img-fluid rounded shadow-sm" />
-                <h5 class="mt-3">Stand-Up Comedy Shows</h5>
-                <p>Laugh out loud with some of the best comedians live on stage.</p>
-            </div>
-            <div class="col-md-4">
-                <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=600&q=80" alt="Cultural Dance" class="img-fluid rounded shadow-sm" />
-                <h5 class="mt-3">Cultural Dance Shows</h5>
-                <p>Experience traditional and modern dance performances celebrating heritage.</p>
+            <div class="col-lg-6">
+                <p class="text-success fw-bold mb-2">JOURNEY & TRAVEL</p>
+                <h2 class="display-5 fw-bold mb-4">Find your Special with Camping Ground</h2>
+                <p class="lead mb-3">Create lasting memories with our exceptional camping experiences designed for every type of adventurer.</p>
+                <p class="mb-4">From solo travelers seeking solitude to families wanting quality time together, we provide the perfect setting for your outdoor dreams.</p>
+                <div class="row">
+                    <div class="col-6">
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Best Location</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Camping Area</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Camping Guide</li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Best Price</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Good Service</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Good Food</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Film & Media Events -->
-<section class="py-5 bg-light">
-    <div class="container">
-        <h2 class="mb-4 text-success">🎬 Film & Media Events</h2>
-        <div class="row g-4">
-            <div class="col-md-3">
-                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=500&q=80" alt="Movie Premiere" class="img-fluid rounded shadow-sm" />
-                <h6 class="mt-2">Movie Premieres</h6>
-            </div>
-            <div class="col-md-3">
-                <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80" alt="Outdoor Cinema" class="img-fluid rounded shadow-sm" />
-                <h6 class="mt-2">Outdoor Cinema Nights</h6>
-            </div>
-            <div class="col-md-3">
-                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80" alt="Film Festival" class="img-fluid rounded shadow-sm" />
-                <h6 class="mt-2">Film Festivals</h6>
-            </div>
-            <div class="col-md-3">
-                <img src="https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=500&q=80" alt="Short Film Screening" class="img-fluid rounded shadow-sm" />
-                <h6 class="mt-2">Short Film Screenings</h6>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Competitive & Game Events -->
-<section class="py-5 bg-white">
-    <div class="container">
-        <h2 class="mb-4 text-success">🏆 Competitive & Game Events</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80" alt="E-Sports Tournament" class="img-fluid rounded shadow-sm" />
-                <h5 class="mt-3">E-Sports Tournaments</h5>
-                <p>Compete or watch top gamers battle in exciting e-sports competitions.</p>
-            </div>
-            <div class="col-md-4">
-                <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=600&q=80" alt="Board Games" class="img-fluid rounded shadow-sm" />
-                <h5 class="mt-3">Board Game Nights</h5>
-                <p>Enjoy strategic fun with friends and family during board game evenings.</p>
-            </div>
-            <div class="col-md-4">
-                <img src="https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=600&q=80" alt="Quiz Night" class="img-fluid rounded shadow-sm" />
-                <h5 class="mt-3">Quiz & Trivia Nights</h5>
-                <p>Test your knowledge and win prizes in our trivia and quiz competitions.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Lifestyle & Festival Events -->
-<section class="py-5 bg-light">
-    <div class="container">
-        <h2 class="mb-4 text-success">🍽️ Lifestyle & Festival Events</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Food Festival" class="img-fluid rounded shadow-sm" />
-                <h5 class="mt-3">Food & Beverage Festivals</h5>
-                <p>Savor delicious food and drinks at vibrant festivals all year round.</p>
-            </div>
-            <div class="col-md-4">
-                <img src="https://images.unsplash.com/photo-1468071174046-657d9d351a40?auto=format&fit=crop&w=600&q=80" alt="Fashion Show" class="img-fluid rounded shadow-sm" />
-                <h5 class="mt-3">Fashion Shows</h5>
-                <p>Discover the latest trends in style and design on the runway.</p>
-            </div>
-            <div class="col-md-4">
-                <img src="https://images.unsplash.com/photo-1512404516797-29a6aa167d7e?auto=format&fit=crop&w=600&q=80" alt="Night Market" class="img-fluid rounded shadow-sm" />
-                <h5 class="mt-3">Seasonal Festivals & Night Markets</h5>
-                <p>Enjoy festive celebrations, night markets, and cultural fairs.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Featured Categories Section -->
-<section class="py-5 bg-white">
+<!-- Explore Campground Activities -->
+<section id="activities" class="py-5" style="background-color: #f8f9fa;">
     <div class="container text-center">
-        <h2 class="mb-5 text-success">Explore Event Categories</h2>
+        <p class="text-success fw-bold mb-2">CAMPING & TRAVEL</p>
+        <h2 class="display-5 fw-bold mb-5">Explore Campground Activities</h2>
         <div class="row g-4">
             <div class="col-md-3">
-                <img src="icon-concert.png" alt="Concerts" class="mb-3" style="width:60px;">
-                <h5>Music Concerts</h5>
-                <p>Live performances from top artists and bands.</p>
-                <a href="/events/concerts" class="btn btn-success btn-sm">See Events</a>
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fas fa-campground fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold">Camping</h5>
+                        <p class="text-muted">Set up your tent in our scenic camping areas with modern amenities.</p>
+                    </div>
+                </div>
             </div>
             <div class="col-md-3">
-                <img src="icon-theater.png" alt="Theater" class="mb-3" style="width:60px;">
-                <h5>Theater & Drama</h5>
-                <p>Captivating plays and dramatic performances.</p>
-                <a href="/events/theater" class="btn btn-success btn-sm">See Events</a>
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fas fa-hiking fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold">Hiking</h5>
+                        <p class="text-muted">Explore our extensive trail network through forests and mountains.</p>
+                    </div>
+                </div>
             </div>
             <div class="col-md-3">
-                <img src="icon-film.png" alt="Film Festivals" class="mb-3" style="width:60px;">
-                <h5>Film Festivals</h5>
-                <p>Showcase of top films and outdoor cinema.</p>
-                <a href="/events/film" class="btn btn-success btn-sm">See Events</a>
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fas fa-mountain fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold">Trekking</h5>
+                        <p class="text-muted">Challenge yourself with our advanced trekking routes and guided tours.</p>
+                    </div>
+                </div>
             </div>
             <div class="col-md-3">
-                <img src="icon-esports.png" alt="E-Sports" class="mb-3" style="width:60px;">
-                <h5>E-Sports Tournaments</h5>
-                <p>Exciting gaming competitions for all levels.</p>
-                <a href="/events/esports" class="btn btn-success btn-sm">See Events</a>
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fas fa-bicycle fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold">Bike Ride</h5>
+                        <p class="text-muted">Enjoy scenic bike trails suitable for all skill levels.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fas fa-umbrella-beach fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold">Relaxing</h5>
+                        <p class="text-muted">Unwind in our peaceful relaxation zones with beautiful views.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fas fa-om fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold">Meditation</h5>
+                        <p class="text-muted">Find inner peace in our dedicated meditation and wellness areas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fas fa-fire fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold">Bonfire</h5>
+                        <p class="text-muted">Gather around cozy bonfires for storytelling and marshmallow roasting.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fas fa-fish fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold">Fishing</h5>
+                        <p class="text-muted">Cast your line in our stocked lakes and streams.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-5">
+            <a class="btn btn-success btn-lg px-4" href="#activities">View All Activities</a>
+        </div>
+    </div>
+</section>
+
+<!-- Accommodation and Equipment Rental -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Accommodation -->
+            <div class="col-lg-6">
+                <div style="background-color: #f8f9fa; padding: 40px; border-radius: 15px;">
+                    <p class="text-success fw-bold mb-2">CAMPING & TRAVEL</p>
+                    <h2 class="display-5 fw-bold mb-4">Accommodation and Provide Place to Stay</h2>
+                    <p class="lead mb-3">Choose from our variety of accommodation options designed for comfort and adventure.</p>
+                    <p class="mb-4">Whether you prefer traditional camping, glamping tents, or cozy cabins, we have the perfect place for your stay.</p>
+                    <a class="btn btn-success btn-lg px-4" href="#accommodation">Explore Now</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div style="background-color: #1a4d2e; padding: 40px; border-radius: 15px; color: white;">
+                    <div class="mb-4">
+                        <span class="badge bg-success fs-6 px-3 py-2 mb-2">01</span>
+                        <h4 class="fw-bold">Best Place</h4>
+                        <p>Prime locations with stunning views and easy access to all facilities.</p>
+                    </div>
+                    <div class="mb-4">
+                        <span class="badge bg-success fs-6 px-3 py-2 mb-2">02</span>
+                        <h4 class="fw-bold">Comfort Zone</h4>
+                        <p>Modern amenities and comfortable accommodations for a relaxing stay.</p>
+                    </div>
+                    <div>
+                        <span class="badge bg-success fs-6 px-3 py-2 mb-2">03</span>
+                        <h4 class="fw-bold">Safety First</h4>
+                        <p>24/7 security and emergency services for your peace of mind.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row g-5 mt-4">
+            <!-- Equipment Rental -->
+            <div class="col-lg-6">
+                <div style="background-color: #f8f9fa; padding: 40px; border-radius: 15px;">
+                    <h3 class="fw-bold mb-4">Available Equipment</h3>
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-sleeping-bag text-success me-3 fa-2x"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-0">Sleeping Bag</h6>
+                                    <p class="text-success mb-0">$25.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-campground text-success me-3 fa-2x"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-0">Tent</h6>
+                                    <p class="text-success mb-0">$45.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-fire text-success me-3 fa-2x"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-0">Camp Stove</h6>
+                                    <p class="text-success mb-0">$20.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-lightbulb text-success me-3 fa-2x"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-0">Lantern</h6>
+                                    <p class="text-success mb-0">$15.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div style="background-color: #f8f9fa; padding: 40px; border-radius: 15px;">
+                    <p class="text-success fw-bold mb-2">CAMPING & TRAVEL</p>
+                    <h2 class="display-5 fw-bold mb-4">Choose we also Provide Equipment Rental</h2>
+                    <p class="lead mb-4">Don't have camping gear? No problem! We offer a complete range of high-quality camping equipment for rent at affordable prices.</p>
+                    <a class="btn btn-success btn-lg px-4" href="#equipment">View All Equipment</a>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Testimonials Section -->
-<section class="py-5 bg-light">
+<!-- Comfortable & Beautiful Area -->
+<section class="py-5" style="background-color: #f8f9fa;">
     <div class="container text-center">
-        <h2 class="mb-4 text-success">What Our Customers Say</h2>
-        <blockquote class="blockquote">
-            <p class="mb-4">“Amazing experience booking with this site. The concert was unforgettable!”</p>
-            <footer class="blockquote-footer">Jane Doe</footer>
-        </blockquote>
-        <blockquote class="blockquote">
-            <p class="mb-4">“The festival tickets were affordable and the event was well organized.”</p>
-            <footer class="blockquote-footer">John Smith</footer>
-        </blockquote>
+        <p class="text-success fw-bold mb-2">CAMPING & TRAVEL</p>
+        <h2 class="display-5 fw-bold mb-4">Comfortable & Beautiful Area</h2>
+        <p class="lead mb-5">Experience the perfect blend of comfort and natural beauty in our carefully designed camping areas.</p>
+        
+        <div class="row g-4 mb-5">
+            <div class="col-lg-4">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80" alt="Yurt tent" class="img-fluid rounded" />
+            </div>
+            <div class="col-lg-4">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80" alt="Dome tent" class="img-fluid rounded" />
+            </div>
+            <div class="col-lg-4">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80" alt="Cabin and canoe" class="img-fluid rounded" />
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fas fa-map-marker-alt fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold">Best Area</h5>
+                        <p class="text-muted">Prime locations with stunning views and easy access.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fas fa-crown fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold">Luxury Tent</h5>
+                        <p class="text-muted">Premium glamping experience with modern amenities.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fas fa-campground fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold">Camping Tent</h5>
+                        <p class="text-muted">Traditional camping with all necessary facilities.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fas fa-home fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold">Cabin House</h5>
+                        <p class="text-muted">Cozy cabins for a comfortable wilderness experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
-
-<!-- Footer CTA -->
-<section class="py-5 text-center bg-success text-white">
+<!-- Package Offer Section -->
+<section class="py-5">
     <div class="container">
-        <h3 class="mb-3">Ready to Book Your Next Experience?</h3>
-        <a class="btn btn-light btn-lg" asp-controller="Home" asp-action="Bookings">Explore Events</a>
+        <div class="row align-items-center" style="background: linear-gradient(90deg, #1a4d2e 0%, #f8f9fa 50%); border-radius: 20px; overflow: hidden;">
+            <div class="col-lg-6 text-white p-5">
+                <p class="text-success fw-bold mb-2">PACKAGE OFFER</p>
+                <h2 class="display-5 fw-bold mb-4">Explore Zona a Camp Ground & Save 50%</h2>
+                <p class="lead mb-4">Take advantage of our special package deals and experience the best of outdoor camping at unbeatable prices.</p>
+                <a class="btn btn-success btn-lg px-4" href="#booking">Book Now</a>
+            </div>
+            <div class="col-lg-6 p-5">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80" alt="Happy camper" class="img-fluid rounded" />
+            </div>
+        </div>
     </div>
 </section>
+
+<!-- Gallery Section -->
+<section class="py-5" style="background-color: #f8f9fa;">
+    <div class="container text-center">
+        <p class="text-success fw-bold mb-2">GALLERY & PHOTOS</p>
+        <h2 class="display-5 fw-bold mb-5">Traveler Photo Camp Ground</h2>
+        
+        <div class="row g-4 mb-5">
+            <div class="col-lg-8">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80" alt="River rafting" class="img-fluid rounded" />
+            </div>
+            <div class="col-lg-4">
+                <div class="row g-3">
+                    <div class="col-12">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=400&q=80" alt="Waterfall" class="img-fluid rounded" />
+                    </div>
+                    <div class="col-12">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=400&q=80" alt="Hiking" class="img-fluid rounded" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fas fa-mountain fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold">Beautiful Scenery</h5>
+                        <p class="text-muted">Breathtaking views and natural landscapes.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fas fa-tree fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold">Green Forest</h5>
+                        <p class="text-muted">Lush forests and diverse ecosystems.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fas fa-star fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold">New Experience</h5>
+                        <p class="text-muted">Unique adventures and memorable moments.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fas fa-compass fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold">Adventure & Trip</h5>
+                        <p class="text-muted">Exciting journeys and exploration opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Holiday Special Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center text-white p-5" style="background: linear-gradient(rgba(26, 77, 46, 0.9), rgba(26, 77, 46, 0.9)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; border-radius: 20px;">
+            <p class="text-success fw-bold mb-2">BOOKING & SPECIAL OFFER</p>
+            <h2 class="display-5 fw-bold mb-4">Holiday Special 25% Off</h2>
+            <p class="lead mb-4">Celebrate the holidays with us and enjoy special discounts on all our camping packages and activities.</p>
+            <a class="btn btn-success btn-lg px-4" href="#booking">Book Now</a>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Form Section -->
+<section id="contact" class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div style="background-color: #1a4d2e; padding: 40px; border-radius: 15px; color: white;">
+                    <h3 class="fw-bold mb-4">Contact Us</h3>
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="tel" class="form-control" placeholder="Phone Number">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-lg px-4">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div style="background-color: #f8f9fa; padding: 40px; border-radius: 15px;">
+                    <p class="text-success fw-bold mb-2">BOOKING & CONTACT</p>
+                    <h2 class="display-5 fw-bold mb-4">Enjoy the Fun Time right now!</h2>
+                    <p class="lead mb-3">Ready to start your outdoor adventure? Contact us today to plan your perfect camping experience.</p>
+                    <p class="mb-4">Our team of camping experts is here to help you choose the best activities, accommodations, and equipment for your needs.</p>
+                    
+                    <div class="mt-5">
+                        <h5 class="fw-bold mb-3">Our Contact Info</h5>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-map-marker-alt text-success me-3 fa-2x"></i>
+                            <div>
+                                <p class="mb-0 fw-bold">Address</p>
+                                <p class="mb-0 text-muted">123 Nature Trail, Forest Valley, CA 90210</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-envelope text-success me-3 fa-2x"></i>
+                            <div>
+                                <p class="mb-0 fw-bold">Email</p>
+                                <p class="mb-0 text-muted">info@zonacampground.com</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-phone text-success me-3 fa-2x"></i>
+                            <div>
+                                <p class="mb-0 fw-bold">Phone</p>
+                                <p class="mb-0 text-muted">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
