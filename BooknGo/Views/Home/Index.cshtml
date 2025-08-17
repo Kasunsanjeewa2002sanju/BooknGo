@@ -1,10 +1,10 @@
 ﻿@{
-    ViewData["Title"] = "BooknGo";
+    ViewData["Title"] = "BooknGo - DJ Events";
 }
 @model List<BooknGo.Models.Booking>
 
 <a asp-action="CreateEditBookingForm" asp-controller="Home" class="btn btn-primary fw-semibold rounded-pill shadow-sm" style="background-color: #1E90FF; border-color: #1E90FF;">
-    Add Booking
+    Book DJ Event
 </a>
 
 
@@ -13,21 +13,21 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <p class="text-success fw-bold mb-2">EXPLORE NATURE</p>
-                <h2 class="display-5 fw-bold mb-4">Explore & Discover the Touch of Nature</h2>
-                <p class="lead mb-3">Immerse yourself in the breathtaking beauty of our natural surroundings. From dense forests to pristine lakes, every corner of our campground offers a unique connection with nature.</p>
-                <p class="mb-4">Our carefully maintained trails and observation points allow you to experience wildlife in their natural habitat while maintaining the highest standards of environmental conservation.</p>
-                <a class="btn btn-success btn-lg px-4" href="#activities">Explore Now</a>
+                <p class="text-danger fw-bold mb-2">PARTY & ENTERTAINMENT</p>
+                <h2 class="display-5 fw-bold mb-4">Experience the Ultimate DJ Night</h2>
+                <p class="lead mb-3">Feel the energy of live music and world-class DJs who bring electrifying performances to your events.</p>
+                <p class="mb-4">From private parties to grand festivals, we connect you with top DJs and unforgettable experiences.</p>
+                <a class="btn btn-danger btn-lg px-4" href="#activities">Explore Now</a>
             </div>
             <div class="col-lg-6">
-                <div class="position-relative" style="background-color: #1a4d2e; padding: 20px; border-radius: 15px;">
+                <div class="position-relative" style="background-color: #111; padding: 20px; border-radius: 15px;">
                     <div class="row g-3">
                         <div class="col-6">
-                            <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=400&q=80" alt="Hiking" class="img-fluid rounded" />
+                            <img src="https://images.unsplash.com/photo-1518972559570-7cc1309f3229?auto=format&fit=crop&w=400&q=80" alt="DJ Performance" class="img-fluid rounded" />
                         </div>
                         <div class="col-6">
-                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=400&q=80" alt="Dog in field" class="img-fluid rounded mb-3" />
-                            <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=400&q=80" alt="Hiking poles" class="img-fluid rounded" />
+                            <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=400&q=80" alt="Crowd Party" class="img-fluid rounded mb-3" />
+                            <img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=400&q=80" alt="DJ Setup" class="img-fluid rounded" />
                         </div>
                     </div>
                 </div>
@@ -41,36 +41,36 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <div class="position-relative" style="background-color: #1a4d2e; padding: 20px; border-radius: 15px;">
-                    <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=600&q=80" alt="Woman with guitar" class="img-fluid rounded mb-3" />
+                <div class="position-relative" style="background-color: #111; padding: 20px; border-radius: 15px;">
+                    <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=600&q=80" alt="DJ Crowd" class="img-fluid rounded mb-3" />
                     <div class="row g-3">
                         <div class="col-6">
-                            <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=300&q=80" alt="Mountain hiking" class="img-fluid rounded" />
+                            <img src="https://images.unsplash.com/photo-1518972559570-7cc1309f3229?auto=format&fit=crop&w=300&q=80" alt="Music Festival" class="img-fluid rounded" />
                         </div>
                         <div class="col-6">
-                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=300&q=80" alt="River rafting" class="img-fluid rounded" />
+                            <img src="https://images.unsplash.com/photo-1497032205916-ac775f0649ae?auto=format&fit=crop&w=300&q=80" alt="DJ Console" class="img-fluid rounded" />
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6">
-                <p class="text-success fw-bold mb-2">JOURNEY & TRAVEL</p>
-                <h2 class="display-5 fw-bold mb-4">Find your Special with Camping Ground</h2>
-                <p class="lead mb-3">Create lasting memories with our exceptional camping experiences designed for every type of adventurer.</p>
-                <p class="mb-4">From solo travelers seeking solitude to families wanting quality time together, we provide the perfect setting for your outdoor dreams.</p>
+                <p class="text-danger fw-bold mb-2">LIVE EVENTS</p>
+                <h2 class="display-5 fw-bold mb-4">Book Your Favorite DJ for Any Occasion</h2>
+                <p class="lead mb-3">From club nights to weddings, our DJs bring the beats that make your night unforgettable.</p>
+                <p class="mb-4">Choose from professional DJs across genres: EDM, Hip-hop, Techno, House, and more.</p>
                 <div class="row">
                     <div class="col-6">
                         <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Best Location</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Camping Area</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Camping Guide</li>
+                            <li class="mb-2"><i class="fas fa-check text-danger me-2"></i>Top DJs</li>
+                            <li class="mb-2"><i class="fas fa-check text-danger me-2"></i>Custom Playlists</li>
+                            <li class="mb-2"><i class="fas fa-check text-danger me-2"></i>Event Hosting</li>
                         </ul>
                     </div>
                     <div class="col-6">
                         <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Best Price</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Good Service</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Good Food</li>
+                            <li class="mb-2"><i class="fas fa-check text-danger me-2"></i>Affordable Packages</li>
+                            <li class="mb-2"><i class="fas fa-check text-danger me-2"></i>Lighting Setup</li>
+                            <li class="mb-2"><i class="fas fa-check text-danger me-2"></i>Sound System</li>
                         </ul>
                     </div>
                 </div>
@@ -79,428 +79,59 @@
     </div>
 </section>
 
-<!-- Explore Campground Activities -->
+<!-- DJ Activities (instead of camping activities) -->
 <section id="activities" class="py-5" style="background-color: #f8f9fa;">
     <div class="container text-center">
-        <p class="text-success fw-bold mb-2">CAMPING & TRAVEL</p>
-        <h2 class="display-5 fw-bold mb-5">Explore Campground Activities</h2>
+        <p class="text-danger fw-bold mb-2">EVENT SERVICES</p>
+        <h2 class="display-5 fw-bold mb-5">Our DJ Event Services</h2>
         <div class="row g-4">
             <div class="col-md-3">
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body text-center">
-                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                            <i class="fas fa-campground fa-2x"></i>
+                        <div class="bg-danger text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fas fa-music fa-2x"></i>
                         </div>
-                        <h5 class="fw-bold">Camping</h5>
-                        <p class="text-muted">Set up your tent in our scenic camping areas with modern amenities.</p>
+                        <h5 class="fw-bold">Club Nights</h5>
+                        <p class="text-muted">Book DJs for electrifying nightclub events.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body text-center">
-                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                            <i class="fas fa-hiking fa-2x"></i>
+                        <div class="bg-danger text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fas fa-glass-cheers fa-2x"></i>
                         </div>
-                        <h5 class="fw-bold">Hiking</h5>
-                        <p class="text-muted">Explore our extensive trail network through forests and mountains.</p>
+                        <h5 class="fw-bold">Private Parties</h5>
+                        <p class="text-muted">Make birthdays, reunions, and events memorable.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body text-center">
-                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                            <i class="fas fa-mountain fa-2x"></i>
+                        <div class="bg-danger text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fas fa-heart fa-2x"></i>
                         </div>
-                        <h5 class="fw-bold">Trekking</h5>
-                        <p class="text-muted">Challenge yourself with our advanced trekking routes and guided tours.</p>
+                        <h5 class="fw-bold">Weddings</h5>
+                        <p class="text-muted">Perfect soundtracks for your big day.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body text-center">
-                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                            <i class="fas fa-bicycle fa-2x"></i>
+                        <div class="bg-danger text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fas fa-headphones fa-2x"></i>
                         </div>
-                        <h5 class="fw-bold">Bike Ride</h5>
-                        <p class="text-muted">Enjoy scenic bike trails suitable for all skill levels.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body text-center">
-                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                            <i class="fas fa-umbrella-beach fa-2x"></i>
-                        </div>
-                        <h5 class="fw-bold">Relaxing</h5>
-                        <p class="text-muted">Unwind in our peaceful relaxation zones with beautiful views.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body text-center">
-                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                            <i class="fas fa-om fa-2x"></i>
-                        </div>
-                        <h5 class="fw-bold">Meditation</h5>
-                        <p class="text-muted">Find inner peace in our dedicated meditation and wellness areas.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body text-center">
-                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                            <i class="fas fa-fire fa-2x"></i>
-                        </div>
-                        <h5 class="fw-bold">Bonfire</h5>
-                        <p class="text-muted">Gather around cozy bonfires for storytelling and marshmallow roasting.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body text-center">
-                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                            <i class="fas fa-fish fa-2x"></i>
-                        </div>
-                        <h5 class="fw-bold">Fishing</h5>
-                        <p class="text-muted">Cast your line in our stocked lakes and streams.</p>
+                        <h5 class="fw-bold">Corporate Events</h5>
+                        <p class="text-muted">Professional DJs for conferences & launches.</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="mt-5">
-            <a class="btn btn-success btn-lg px-4" href="#activities">View All Activities</a>
+            <a class="btn btn-danger btn-lg px-4" href="#activities">View All Services</a>
         </div>
     </div>
 </section>
-
-<!-- Accommodation and Equipment Rental -->
-<section class="py-5">
-    <div class="container">
-        <div class="row g-5">
-            <!-- Accommodation -->
-            <div class="col-lg-6">
-                <div style="background-color: #f8f9fa; padding: 40px; border-radius: 15px;">
-                    <p class="text-success fw-bold mb-2">CAMPING & TRAVEL</p>
-                    <h2 class="display-5 fw-bold mb-4">Accommodation and Provide Place to Stay</h2>
-                    <p class="lead mb-3">Choose from our variety of accommodation options designed for comfort and adventure.</p>
-                    <p class="mb-4">Whether you prefer traditional camping, glamping tents, or cozy cabins, we have the perfect place for your stay.</p>
-                    <a class="btn btn-success btn-lg px-4" href="#accommodation">Explore Now</a>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div style="background-color: #1a4d2e; padding: 40px; border-radius: 15px; color: white;">
-                    <div class="mb-4">
-                        <span class="badge bg-success fs-6 px-3 py-2 mb-2">01</span>
-                        <h4 class="fw-bold">Best Place</h4>
-                        <p>Prime locations with stunning views and easy access to all facilities.</p>
-                    </div>
-                    <div class="mb-4">
-                        <span class="badge bg-success fs-6 px-3 py-2 mb-2">02</span>
-                        <h4 class="fw-bold">Comfort Zone</h4>
-                        <p>Modern amenities and comfortable accommodations for a relaxing stay.</p>
-                    </div>
-                    <div>
-                        <span class="badge bg-success fs-6 px-3 py-2 mb-2">03</span>
-                        <h4 class="fw-bold">Safety First</h4>
-                        <p>24/7 security and emergency services for your peace of mind.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="row g-5 mt-4">
-            <!-- Equipment Rental -->
-            <div class="col-lg-6">
-                <div style="background-color: #f8f9fa; padding: 40px; border-radius: 15px;">
-                    <h3 class="fw-bold mb-4">Available Equipment</h3>
-                    <div class="row g-3">
-                        <div class="col-6">
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-sleeping-bag text-success me-3 fa-2x"></i>
-                                <div>
-                                    <h6 class="fw-bold mb-0">Sleeping Bag</h6>
-                                    <p class="text-success mb-0">$25.00</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-campground text-success me-3 fa-2x"></i>
-                                <div>
-                                    <h6 class="fw-bold mb-0">Tent</h6>
-                                    <p class="text-success mb-0">$45.00</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-fire text-success me-3 fa-2x"></i>
-                                <div>
-                                    <h6 class="fw-bold mb-0">Camp Stove</h6>
-                                    <p class="text-success mb-0">$20.00</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-lightbulb text-success me-3 fa-2x"></i>
-                                <div>
-                                    <h6 class="fw-bold mb-0">Lantern</h6>
-                                    <p class="text-success mb-0">$15.00</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div style="background-color: #f8f9fa; padding: 40px; border-radius: 15px;">
-                    <p class="text-success fw-bold mb-2">CAMPING & TRAVEL</p>
-                    <h2 class="display-5 fw-bold mb-4">Choose we also Provide Equipment Rental</h2>
-                    <p class="lead mb-4">Don't have camping gear? No problem! We offer a complete range of high-quality camping equipment for rent at affordable prices.</p>
-                    <a class="btn btn-success btn-lg px-4" href="#equipment">View All Equipment</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Comfortable & Beautiful Area -->
-<section class="py-5" style="background-color: #f8f9fa;">
-    <div class="container text-center">
-        <p class="text-success fw-bold mb-2">CAMPING & TRAVEL</p>
-        <h2 class="display-5 fw-bold mb-4">Comfortable & Beautiful Area</h2>
-        <p class="lead mb-5">Experience the perfect blend of comfort and natural beauty in our carefully designed camping areas.</p>
-        
-        <div class="row g-4 mb-5">
-            <div class="col-lg-4">
-                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80" alt="Yurt tent" class="img-fluid rounded" />
-            </div>
-            <div class="col-lg-4">
-                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80" alt="Dome tent" class="img-fluid rounded" />
-            </div>
-            <div class="col-lg-4">
-                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80" alt="Cabin and canoe" class="img-fluid rounded" />
-            </div>
-        </div>
-        
-        <div class="row g-4">
-            <div class="col-md-3">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body text-center">
-                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                            <i class="fas fa-map-marker-alt fa-2x"></i>
-                        </div>
-                        <h5 class="fw-bold">Best Area</h5>
-                        <p class="text-muted">Prime locations with stunning views and easy access.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body text-center">
-                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                            <i class="fas fa-crown fa-2x"></i>
-                        </div>
-                        <h5 class="fw-bold">Luxury Tent</h5>
-                        <p class="text-muted">Premium glamping experience with modern amenities.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body text-center">
-                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                            <i class="fas fa-campground fa-2x"></i>
-                        </div>
-                        <h5 class="fw-bold">Camping Tent</h5>
-                        <p class="text-muted">Traditional camping with all necessary facilities.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body text-center">
-                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                            <i class="fas fa-home fa-2x"></i>
-                        </div>
-                        <h5 class="fw-bold">Cabin House</h5>
-                        <p class="text-muted">Cozy cabins for a comfortable wilderness experience.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Package Offer Section -->
-<section class="py-5">
-    <div class="container">
-        <div class="row align-items-center" style="background: linear-gradient(90deg, #1a4d2e 0%, #f8f9fa 50%); border-radius: 20px; overflow: hidden;">
-            <div class="col-lg-6 text-white p-5">
-                <p class="text-success fw-bold mb-2">PACKAGE OFFER</p>
-                <h2 class="display-5 fw-bold mb-4">Explore Zona a Camp Ground & Save 50%</h2>
-                <p class="lead mb-4">Take advantage of our special package deals and experience the best of outdoor camping at unbeatable prices.</p>
-                <a class="btn btn-success btn-lg px-4" href="#booking">Book Now</a>
-            </div>
-            <div class="col-lg-6 p-5">
-                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80" alt="Happy camper" class="img-fluid rounded" />
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Gallery Section -->
-<section class="py-5" style="background-color: #f8f9fa;">
-    <div class="container text-center">
-        <p class="text-success fw-bold mb-2">GALLERY & PHOTOS</p>
-        <h2 class="display-5 fw-bold mb-5">Traveler Photo Camp Ground</h2>
-        
-        <div class="row g-4 mb-5">
-            <div class="col-lg-8">
-                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80" alt="River rafting" class="img-fluid rounded" />
-            </div>
-            <div class="col-lg-4">
-                <div class="row g-3">
-                    <div class="col-12">
-                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=400&q=80" alt="Waterfall" class="img-fluid rounded" />
-                    </div>
-                    <div class="col-12">
-                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=400&q=80" alt="Hiking" class="img-fluid rounded" />
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="row g-4">
-            <div class="col-md-3">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body text-center">
-                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                            <i class="fas fa-mountain fa-2x"></i>
-                        </div>
-                        <h5 class="fw-bold">Beautiful Scenery</h5>
-                        <p class="text-muted">Breathtaking views and natural landscapes.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body text-center">
-                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                            <i class="fas fa-tree fa-2x"></i>
-                        </div>
-                        <h5 class="fw-bold">Green Forest</h5>
-                        <p class="text-muted">Lush forests and diverse ecosystems.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body text-center">
-                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                            <i class="fas fa-star fa-2x"></i>
-                        </div>
-                        <h5 class="fw-bold">New Experience</h5>
-                        <p class="text-muted">Unique adventures and memorable moments.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body text-center">
-                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                            <i class="fas fa-compass fa-2x"></i>
-                        </div>
-                        <h5 class="fw-bold">Adventure & Trip</h5>
-                        <p class="text-muted">Exciting journeys and exploration opportunities.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Holiday Special Section -->
-<section class="py-5">
-    <div class="container">
-        <div class="text-center text-white p-5" style="background: linear-gradient(rgba(26, 77, 46, 0.9), rgba(26, 77, 46, 0.9)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; border-radius: 20px;">
-            <p class="text-success fw-bold mb-2">BOOKING & SPECIAL OFFER</p>
-            <h2 class="display-5 fw-bold mb-4">Holiday Special 25% Off</h2>
-            <p class="lead mb-4">Celebrate the holidays with us and enjoy special discounts on all our camping packages and activities.</p>
-            <a class="btn btn-success btn-lg px-4" href="#booking">Book Now</a>
-        </div>
-    </div>
-</section>
-
-<!-- Contact Form Section -->
-<section id="contact" class="py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div style="background-color: #1a4d2e; padding: 40px; border-radius: 15px; color: white;">
-                    <h3 class="fw-bold mb-4">Contact Us</h3>
-                    <form>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Your Name" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="tel" class="form-control" placeholder="Phone Number">
-                        </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Subject">
-                        </div>
-                        <div class="mb-3">
-                            <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-success btn-lg px-4">Send Message</button>
-                    </form>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div style="background-color: #f8f9fa; padding: 40px; border-radius: 15px;">
-                    <p class="text-success fw-bold mb-2">BOOKING & CONTACT</p>
-                    <h2 class="display-5 fw-bold mb-4">Enjoy the Fun Time right now!</h2>
-                    <p class="lead mb-3">Ready to start your outdoor adventure? Contact us today to plan your perfect camping experience.</p>
-                    <p class="mb-4">Our team of camping experts is here to help you choose the best activities, accommodations, and equipment for your needs.</p>
-                    
-                    <div class="mt-5">
-                        <h5 class="fw-bold mb-3">Our Contact Info</h5>
-                        <div class="d-flex align-items-center mb-3">
-                            <i class="fas fa-map-marker-alt text-success me-3 fa-2x"></i>
-                            <div>
-                                <p class="mb-0 fw-bold">Address</p>
-                                <p class="mb-0 text-muted">123 Nature Trail, Forest Valley, CA 90210</p>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center mb-3">
-                            <i class="fas fa-envelope text-success me-3 fa-2x"></i>
-                            <div>
-                                <p class="mb-0 fw-bold">Email</p>
-                                <p class="mb-0 text-muted">info@zonacampground.com</p>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <i class="fas fa-phone text-success me-3 fa-2x"></i>
-                            <div>
-                                <p class="mb-0 fw-bold">Phone</p>
-                                <p class="mb-0 text-muted">+1 (555) 123-4567</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
